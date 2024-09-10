@@ -20,5 +20,10 @@ public class Tarefa {
 
     private String description;
 
-    private Status status;
+    @Column(name = "status_code")
+    private Integer status;
+    public Status getStatus() {
+        if (status == null) return null;
+        return Status.valueOf(status); //Converte o código para enum
+    }
 }

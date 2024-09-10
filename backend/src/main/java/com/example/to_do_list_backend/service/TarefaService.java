@@ -43,6 +43,6 @@ public class TarefaService {
     private void updateData(Tarefa tarefa, TarefaRequestDTO requestDTO) {
         tarefa.setTitle(requestDTO.title());
         tarefa.setDescription(requestDTO.description());
-        tarefa.setStatus(requestDTO.status());
+        tarefa.setStatus(requestDTO.status().getCode());
     }
 }

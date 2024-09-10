@@ -13,6 +13,6 @@ public class TarefaMapper {
 
     //Transforma um objeto TarefaRequestDTO em Tarefa
     public static Tarefa requestDTOToTarefa(TarefaRequestDTO requestDTO) {
-        return new Tarefa(null, requestDTO.title(), requestDTO.description(), requestDTO.status());
+        return new Tarefa(null, requestDTO.title(), requestDTO.description(), requestDTO.status().getCode());
     }
 }
