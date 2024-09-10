@@ -44,4 +44,11 @@ public class TarefaController {
         service.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+    //Atualiza uma tarefa
+    @PutMapping(value = "/{id}") //Mapeia as requisições PUT com o id passado como parâmetro para este método
+    public ResponseEntity<TarefaResponseDTO> update(@PathVariable Long id, @RequestBody TarefaRequestDTO requestDTO) {
+        TarefaResponseDTO responseDTO = service.update(id, requestDTO);
+        return ResponseEntity.ok().body(responseDTO);
+    }
 }

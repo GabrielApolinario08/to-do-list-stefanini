@@ -31,4 +31,18 @@ public class TarefaService {
         findById(id);
         repository.deleteById(id);
     }
+
+    public TarefaResponseDTO update(Long id, TarefaRequestDTO requestDTO) {
+        Tarefa tarefa = repository.findById(id).orElseThrow();
+        updateData(tarefa, requestDTO);
+        repository.save(tarefa);
+        return TarefaMapper.tarefaToResponseDTO(tarefa);
+    }
+
+    //Inclui as novas informações nos métodos
+    private void updateData(Tarefa tarefa, TarefaRequestDTO requestDTO) {
+        tarefa.setTitle(requestDTO.title());
+        tarefa.setDescription(requestDTO.description());
+        tarefa.setStatus(requestDTO.status());
+    }
 }
