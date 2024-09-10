@@ -26,4 +26,9 @@ public class TarefaService {
     public TarefaResponseDTO insert(TarefaRequestDTO requestDTO) {
         return TarefaMapper.tarefaToResponseDTO(repository.save(TarefaMapper.requestDTOToTarefa(requestDTO)));
     }
+
+    public void deleteById(Long id) {
+        findById(id);
+        repository.deleteById(id);
+    }
 }

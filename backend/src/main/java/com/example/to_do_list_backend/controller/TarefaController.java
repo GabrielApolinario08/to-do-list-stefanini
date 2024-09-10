@@ -37,4 +37,11 @@ public class TarefaController {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(responseDTO.id()).toUri();//Constrói a URI do novo recurso criado
         return ResponseEntity.created(uri).body(responseDTO);
     }
+
+    //Deleta uma tarefa de acordo com o id
+    @DeleteMapping(value = "/{id}") //Mapeia as requisições DELETE para o método
+    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
+        service.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 }
