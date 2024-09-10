@@ -17,4 +17,9 @@ public class TarefaService {
     public List<TarefaResponseDTO> findAll() {
         return repository.findAll().stream().map(TarefaMapper::tarefaToResponseDTO).toList();
     }
+
+    public TarefaResponseDTO findById(Long id) {
+        return TarefaMapper.tarefaToResponseDTO(repository.findById(id).orElseThrow());
+    }
+
 }
