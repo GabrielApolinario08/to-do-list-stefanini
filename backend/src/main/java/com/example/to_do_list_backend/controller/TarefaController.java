@@ -1,13 +1,13 @@
 package com.example.to_do_list_backend.controller;
+import com.example.to_do_list_backend.dto.TarefaRequestDTO;
 import com.example.to_do_list_backend.dto.TarefaResponseDTO;
 import com.example.to_do_list_backend.service.TarefaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -16,13 +16,25 @@ public class TarefaController {
     @Autowired
     private TarefaService service;
 
-    @GetMapping
+    //Endpoints:
+
+    //Retorna todas as tarefas existentes
+    @GetMapping //Mapeia as requisições GET para este método
     public ResponseEntity<List<TarefaResponseDTO>> findAll() {
         return ResponseEntity.ok().body(service.findAll());
     }
 
-    @GetMapping(value = "/{id}")
+    //Retorna apenas uma tarefa de acordo com o id
+    @GetMapping(value = "/{id}") //Mapeia as requisições GET com o id passado como parâmetro para este método
     public ResponseEntity<TarefaResponseDTO> findById(@PathVariable Long id) {
         return ResponseEntity.ok().body(service.findById(id));
+    }
+
+    //Cria uma nova tarefa
+    @PostMapping //Mapeia as requisições POST para este método
+    public ResponseEntity<TarefaResponseDTO> insert(@RequestBody TarefaRequestDTO requestDTO) {
+        TarefaResponseDTO responseDTO = service.insert(requestDTO);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(responseDTO.id()).toUri();//Constrói a URI do novo recurso criado
+        return ResponseEntity.created(uri).body(responseDTO);
     }
 }

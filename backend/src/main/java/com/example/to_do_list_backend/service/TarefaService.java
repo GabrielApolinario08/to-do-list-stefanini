@@ -1,6 +1,7 @@
 package com.example.to_do_list_backend.service;
 
 import com.example.to_do_list_backend.domain.Tarefa;
+import com.example.to_do_list_backend.dto.TarefaRequestDTO;
 import com.example.to_do_list_backend.dto.TarefaResponseDTO;
 import com.example.to_do_list_backend.mapper.TarefaMapper;
 import com.example.to_do_list_backend.repository.TarefaRepository;
@@ -22,4 +23,7 @@ public class TarefaService {
         return TarefaMapper.tarefaToResponseDTO(repository.findById(id).orElseThrow());
     }
 
+    public TarefaResponseDTO insert(TarefaRequestDTO requestDTO) {
+        return TarefaMapper.tarefaToResponseDTO(repository.save(TarefaMapper.requestDTOToTarefa(requestDTO)));
+    }
 }
