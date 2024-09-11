@@ -1,5 +1,4 @@
 package com.example.to_do_list_backend.domain;
-
 import com.example.to_do_list_backend.domain.enums.Status;
 import jakarta.persistence.*;
 import lombok.*;
@@ -16,14 +15,15 @@ public class Tarefa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String title;
 
+    @Column(nullable = false)
     private String description;
 
-    @Column(name = "status_code")
+    @Column(name = "status_code", nullable = false)
     private Integer status;
     public Status getStatus() {
-        if (status == null) return null;
         return Status.valueOf(status); //Converte o código para enum
     }
 }

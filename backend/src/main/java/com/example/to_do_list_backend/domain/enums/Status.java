@@ -1,6 +1,4 @@
 package com.example.to_do_list_backend.domain.enums;
-
-import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Getter;
 
 @Getter
