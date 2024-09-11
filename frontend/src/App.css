@@ -1,0 +1,17 @@
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-tarefas {
+  width: 80%;
+  text-align: center;
+  padding-top: 5em;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
