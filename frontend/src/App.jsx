@@ -1,4 +1,5 @@
 import './App.css'
+import CardTarefa from './components/card-tarefa/cardTarefa'
 
 function App() {
 
@@ -7,7 +8,11 @@ function App() {
       <div className='container-tarefas'>
         <h1>Lista de Tarefas</h1>
         <div className='tarefas'>
-          
+          <CardTarefa/>
+          <CardTarefa/>
+          <CardTarefa/>
+          <CardTarefa/>
+          <CardTarefa/>
         </div>
       </div>
     </div>

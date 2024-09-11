@@ -6,12 +6,19 @@
 }
 
 .container-tarefas {
-  width: 80%;
+  width: 60%;
   text-align: center;
-  padding-top: 5em;
 }
 
 h1 {
+  padding: 1em 0;
   font-size: 50px;
   font-weight: 700;
+}
+
+.tarefas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
 }

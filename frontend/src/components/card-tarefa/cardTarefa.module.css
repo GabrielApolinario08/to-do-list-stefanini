@@ -1,0 +1,45 @@
+.container-card {
+    width: 32%;
+    box-shadow: 1px 1px 3px #000;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.container-card h2 {
+    font-weight: 500;
+    padding: 2px 0;
+}
+
+.descricao {
+    text-align: justify;
+    padding: 10px;
+    font-weight: 400;
+}
+
+.status {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+.container-btns {
+    padding: 5px 0;
+}
+
+.container-btns button {
+    padding: 5px 20px;
+    margin: 0 10px;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.btn-editar {
+    padding: 5px;
+    background-color: #ffc107;
+}
+
+.btn-excluir {
+    background-color: #dc3545;
+}
