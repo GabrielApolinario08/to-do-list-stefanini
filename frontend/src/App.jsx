@@ -2,13 +2,19 @@ import { useState } from 'react'
 import './App.css'
 import CardTarefa from './components/card-tarefa/cardTarefa'
 import CriarModal from './components/criar-modal/criarModal';
+import UpdateModal from './components/update-modal/updateModal';
 
 function App() {
 
-  const [abrirModal, setAbrirModal] = useState(false);
+  const [openModalCreate, setOpenModalCreate] = useState(false);
+  const [openModalUpdate, setOpenModalUpdate] = useState(false);
 
-  const handleOpenModal = () => {
-    setAbrirModal(!abrirModal)
+  const handleOpenModalCreate = () => {
+    setOpenModalCreate((prev) => !prev)
+  }
+
+  const handleOpenModalUpdate = () => {
+    setOpenModalUpdate((prev) => !prev)
   }
 
   return (
@@ -16,16 +22,17 @@ function App() {
       <div className='container-tarefas'>
         <h1>Lista de Tarefas</h1>
         <div className='tarefas'>
-          <CardTarefa/>
-          <CardTarefa/>
-          <CardTarefa/>
-          <CardTarefa/>
-          <CardTarefa/>
+          <CardTarefa edit={handleOpenModalUpdate}/>
+          <CardTarefa edit={handleOpenModalUpdate}/>
+          <CardTarefa edit={handleOpenModalUpdate}/>
+          <CardTarefa edit={handleOpenModalUpdate}/>
+          <CardTarefa edit={handleOpenModalUpdate}/>
       
         </div>
       </div>
-      {abrirModal && <CriarModal closeModal={handleOpenModal}/>}
-      <button onClick={handleOpenModal} className='criar-btn'>Criar Tarefa</button>
+      {openModalUpdate && <UpdateModal closeModal={handleOpenModalUpdate}/>}
+      {openModalCreate && <CriarModal closeModal={handleOpenModalCreate}/>}
+      <button onClick={handleOpenModalCreate} className='criar-btn'>Criar Tarefa</button>
     </div>
   )
 }
