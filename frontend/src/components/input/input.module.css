@@ -1,0 +1,18 @@
+.container-input {
+    display: flex;
+    flex-direction: column;
+    padding: .5em 0;
+}
+
+.container-input label {
+    font-size: 20px;
+}
+
+.container-input input {
+    border: 1px solid rgba(128, 128, 128, 0.247);
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    outline: 0;
+}
+

@@ -1,8 +1,9 @@
 .container-card {
     width: 32%;
-    box-shadow: 1px 1px 3px #000;
+    box-shadow: 2px 2px 5px #f8f9fa;
     border-radius: 5px;
     padding: 15px;
+    background-color: #495057;
 }
 
 .container-card h2 {
@@ -20,6 +21,7 @@
     font-size: 20px;
     font-weight: 700;
     padding: 10px 0;
+    color: var(--amarelo);
 }
 
 .container-btns {
@@ -32,12 +34,14 @@
     border: none;
     font-size: 18px;
     border-radius: 5px;
-    color: #fff;
+    color: #f8f9fa;
+    font-weight: 700;
 }
 
 .btn-editar {
     padding: 5px;
-    background-color: #ffc107;
+    background-color: #0d6efd;
+
 }
 
 .btn-excluir {

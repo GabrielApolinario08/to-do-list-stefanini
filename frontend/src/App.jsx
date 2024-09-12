@@ -1,7 +1,15 @@
+import { useState } from 'react'
 import './App.css'
 import CardTarefa from './components/card-tarefa/cardTarefa'
+import CriarModal from './components/criar-modal/criarModal';
 
 function App() {
+
+  const [abrirModal, setAbrirModal] = useState(false);
+
+  const handleOpenModal = () => {
+    setAbrirModal(!abrirModal)
+  }
 
   return (
     <div className='container'>
@@ -13,8 +21,11 @@ function App() {
           <CardTarefa/>
           <CardTarefa/>
           <CardTarefa/>
+      
         </div>
       </div>
+      {abrirModal && <CriarModal closeModal={handleOpenModal}/>}
+      <button onClick={handleOpenModal} className='criar-btn'>Criar Tarefa</button>
     </div>
   )
 }
