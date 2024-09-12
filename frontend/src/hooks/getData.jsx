@@ -11,6 +11,7 @@ const UseFetchTarefas = () => {
             try {
                 const response = await axios.get("http://localhost:8080/tarefas")
                 setData(response.data)
+                console.log(response.data);
             } catch (error) {
                 setError("Erro ao buscar dados.")
                 console.error("Erro ao buscar dados: ", error)

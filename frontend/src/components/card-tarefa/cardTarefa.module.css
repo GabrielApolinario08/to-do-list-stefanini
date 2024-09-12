@@ -12,16 +12,14 @@
 }
 
 .descricao {
-    text-align: justify;
+    text-align: start;
     padding: 10px;
     font-weight: 400;
 }
 
 .status {
     font-size: 20px;
-    font-weight: 700;
     padding: 10px 0;
-    color: var(--amarelo);
 }
 
 .container-btns {
@@ -46,4 +44,16 @@
 
 .btn-excluir {
     background-color: #dc3545;
+}
+
+.nao_iniciado {
+    color: var(--red);
+}
+
+.em_andamento {
+    color: var(--yellow);
+}
+
+.concluido {
+    color: var(--green);
 }

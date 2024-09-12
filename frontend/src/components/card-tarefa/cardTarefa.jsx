@@ -1,13 +1,13 @@
 import styles from './cardTarefa.module.css'
-const CardTarefa = ({ title, description, status, edit }) => {
+const CardTarefa = ({ title, description, status, edit, del }) => {
     return (
         <div className={styles["container-card"]}>
             <h2>{title}</h2>
-            <p className={styles["descricao"]}>Terminar minha aplicação FullStack para conseguir um emprego.</p>
-            <p className={styles["status"]}>CONCLUIDO</p>
+            <p className={styles["descricao"]}>{description}</p>
+            <p className={`${styles.status} ${styles[status.toLowerCase()]}`}>{status}</p>
             <div className={styles["container-btns"]}>
                 <button onClick={edit} className={styles["btn-editar"]}>Editar</button>
-                <button className={styles["btn-excluir"]}>Excluir</button>
+                <button onClick={del} className={styles["btn-excluir"]}>Excluir</button>
             </div>
         </div>
     )

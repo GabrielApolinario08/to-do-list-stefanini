@@ -3,6 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
+  padding-bottom: 3em;
 }
 
 .container-tarefas {
