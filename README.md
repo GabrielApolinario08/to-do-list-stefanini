@@ -29,9 +29,9 @@ cd to-do-list-stefanini
 # Use Docker Compose para construir e iniciar os contêineres:
 docker-compose up --build
 ```
-##Acesse a aplicação
-Frontend: http://localhost:80
-Backend: http://localhost:8080
+## Acesse a aplicação
+- Frontend: http://localhost:80
+- Backend: http://localhost:8080
 
 # Endpoints da API
 | Método  | Endpoint | Descrição |
