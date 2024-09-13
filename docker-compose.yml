@@ -1,9 +1,8 @@
 services:
   db:
     image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: to-do-list
+    env_file:
+      - .env
     volumes:
       - db-data:/var/lib/mysql
     ports:
@@ -14,10 +13,8 @@ services:
       context: ./backend
     depends_on:
       - db
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/to-do-list?createDatabaseIfNotExist=true
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: password
+    env_file:
+      - .env
     ports:
       - "8080:8080"
 
