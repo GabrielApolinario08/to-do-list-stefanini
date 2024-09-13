@@ -19,18 +19,21 @@ public class TarefaController {
     //Endpoints:
 
     //Retorna todas as tarefas existentes
+    @CrossOrigin(origins = "*")
     @GetMapping //Mapeia as requisições GET para este método
     public ResponseEntity<List<TarefaResponseDTO>> findAll() {
         return ResponseEntity.ok().body(service.findAll());
     }
 
     //Retorna apenas uma tarefa de acordo com o id
+    @CrossOrigin(origins = "*")
     @GetMapping(value = "/{id}") //Mapeia as requisições GET com o id passado como parâmetro para este método
     public ResponseEntity<TarefaResponseDTO> findById(@PathVariable Long id) {
         return ResponseEntity.ok().body(service.findById(id));
     }
 
     //Cria uma nova tarefa
+    @CrossOrigin(origins = "*")
     @PostMapping //Mapeia as requisições POST para este método
     public ResponseEntity<TarefaResponseDTO> insert(@RequestBody TarefaRequestDTO requestDTO) {
         TarefaResponseDTO responseDTO = service.insert(requestDTO);
@@ -39,6 +42,7 @@ public class TarefaController {
     }
 
     //Deleta uma tarefa de acordo com o id
+    @CrossOrigin(origins = "*")
     @DeleteMapping(value = "/{id}") //Mapeia as requisições DELETE para o método
     public ResponseEntity<Void> deleteById(@PathVariable Long id) {
         service.deleteById(id);
@@ -46,6 +50,7 @@ public class TarefaController {
     }
 
     //Atualiza uma tarefa
+    @CrossOrigin(origins = "*")
     @PutMapping(value = "/{id}") //Mapeia as requisições PUT com o id passado como parâmetro para este método
     public ResponseEntity<TarefaResponseDTO> update(@PathVariable Long id, @RequestBody TarefaRequestDTO requestDTO) {
         TarefaResponseDTO responseDTO = service.update(id, requestDTO);
