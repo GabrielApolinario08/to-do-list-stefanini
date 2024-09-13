@@ -12,9 +12,9 @@ Este projeto é uma aplicação de lista de tarefas (To-Do List) que utiliza Spr
 - React
 
 # Imagens
-   <img src="./frontend/public/tarefas.png" width="600"/>
-   <img src="./frontend/public/cadastrar-tarefa.png" width="600"/>
-   <img src="./frontend/public/atualizando-tarefa.png" width="600">
+   <img src="./frontend/public/tarefas.png" width="800"/>
+   <img src="./frontend/public/cadastrar-tarefa.png" width="800"/>
+   <img src="./frontend/public/atualizando-tarefa.png" width="800">
    
 # Como executar o projeto
 ## Pré-requisitos
@@ -33,10 +33,10 @@ docker-compose up --build
 | Método  | Endpoint | Descrição |
 | ------------- | ------------- | ------------- |
 | GET  | /tarefas  | Retorna uma lista de todas as tarefas.  |
-| GET  | /tarefas{tarefaId}  | Retorna uma tarefa específica com base no ID fornecido.  |
+| GET  | /tarefas/{tarefaId}  | Retorna uma tarefa específica com base no ID fornecido.  |
 | POST  | /tarefas  | Cria uma nova tarefa com base nos dados fornecidos no corpo da requisição.  |
-| PUT  | /tarefas{tarefaId}  | Atualiza uma tarefa existente com base no ID fornecido e os novos dados passados no corpo da requisição.  |
-| DELETE  | /tarefas{tarefaId}  | Deleta uma tarefa existente com base no ID fornecido.  |
+| PUT  | /tarefas/{tarefaId}  | Atualiza uma tarefa existente com base no ID fornecido e os novos dados passados no corpo da requisição.  |
+| DELETE  | /tarefas/{tarefaId}  | Deleta uma tarefa existente com base no ID fornecido.  |
 
 # Autor
 
