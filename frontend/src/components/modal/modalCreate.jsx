@@ -1,29 +1,31 @@
 import { useState } from "react";
 import Input from "../input/input";
-import styles from "./criarModal.module.css"
+import styles from "./modal.module.css"
 import { BsXLg } from "react-icons/bs";import UseCreateTarefas from "../../hooks/postData";
-''
+import useCreateTarefas from "../../hooks/postData";
 
-const CriarModal = ({closeModal, addNewTarefa}) => {
+const ModalCreate = ({closeModal, addNewTarefa}) => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [status, setStatus] = useState("");
-    const {createTarefa, error} = UseCreateTarefas(title, description, status);
+    const {createTarefa, error} = useCreateTarefas(title, description, status);
 
     const submit = async (e) => {
         e.preventDefault();
         if(title == "" || description == "" || status == "") {
+            window.alert("Preencha todos os campos!")
             return;
         }
 
         const newData = await createTarefa(title, description, status)
         if(newData) {
             addNewTarefa(newData)
+            closeModal()
         }
     }
     return(
-        <div className={styles["overlay"]}>
-            <div className={styles["modal"]}>
+        <div className={styles["overlay"]} onClick={closeModal}>
+            <div className={styles["modal"]} onClick={(e) => e.stopPropagation()}>
                 <header>
                 <h2>Criando Nova Tarefa</h2>
                 <button className="bi bi-x-lg" onClick={closeModal}><BsXLg/></button>
@@ -48,4 +50,4 @@ const CriarModal = ({closeModal, addNewTarefa}) => {
     )
 }
 
-export default CriarModal;
+export default ModalCreate;

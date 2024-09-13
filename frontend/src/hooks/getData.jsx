@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
 
-const UseFetchTarefas = () => {
+const useFetchTarefas = () => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -26,4 +26,4 @@ const UseFetchTarefas = () => {
 }
 
 
-export default UseFetchTarefas;  
+export default useFetchTarefas;  

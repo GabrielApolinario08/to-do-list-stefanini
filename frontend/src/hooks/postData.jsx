@@ -1,8 +1,8 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 
-const UseCreateTarefas = () => {
+const useCreateTarefas = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
 
@@ -17,8 +17,8 @@ const UseCreateTarefas = () => {
             const response = await axios.post("http://localhost:8080/tarefas", newTarefa)
             return response.data;
         } catch (error) {
-            setError("Erro ao buscar dados.")
-            console.error("Erro ao buscar dados: ", error)
+            setError("Erro ao inserir nova tarefa.")
+            console.error("Erro ao inserir dados: ", error)
         } finally {
             setLoading(false)
         }
@@ -26,4 +26,4 @@ const UseCreateTarefas = () => {
     return { createTarefa, loading, error }
 }
 
-export default UseCreateTarefas;
+export default useCreateTarefas;

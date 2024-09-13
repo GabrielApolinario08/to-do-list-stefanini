@@ -13,7 +13,7 @@
 }
 
 h1 {
-  padding: 1em 0 .5em 0;
+  padding: .5em 0;
   font-size: 50px;
   font-weight: 700;
   color: #fff;
@@ -26,7 +26,7 @@ h1 {
   gap: 1em;
 }
 
-.criar-btn {
+.btn-create-tarefa {
   position: fixed;
   bottom: 20px;
   right: 30px;
@@ -39,7 +39,7 @@ h1 {
   font-weight: 700;
 }
 
-.criar-btn:hover {
+.btn-create-tarefa:hover {
   color: var(--green);
   background-color: #fff;
   transition: .2s;

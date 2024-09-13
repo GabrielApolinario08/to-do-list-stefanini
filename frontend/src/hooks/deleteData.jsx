@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const UseDeleteTarefa = () => {
+const useDeleteTarefa = () => {
     const deleteTarefa = async (id) => {
         try {
             await axios.delete(`http://localhost:8080/tarefas/${id}`)
             return true
         } catch (error) {   
-            console.error("Erro ao buscar dados: ", error)
+            console.error("Erro ao deletar dados: ", error)
             window.alert("Erro ao deletar tarefa.")
             return false
         }
@@ -15,4 +15,4 @@ const UseDeleteTarefa = () => {
     return {deleteTarefa}
 }
 
-export default UseDeleteTarefa
+export default useDeleteTarefa
