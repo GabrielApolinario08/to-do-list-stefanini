@@ -42,7 +42,7 @@ const ModalUpdate = ({ closeModal, tarefa, setUpdateTarefa }) => {
                                 <option value="">Selecione um status</option>
                                 <option value="NAO_INICIADO">Não Iniciado</option>
                                 <option value="EM_ANDAMENTO">Em Andamento</option>
-                                <option value="CONCLUIDO">Concluido</option>
+                                <option value="CONCLUIDO">Concluído</option>
                             </select>
                         </div>
                         <button onClick={submit} className={styles["btn-add"]}>Atualizar</button>
